@@ -120,9 +120,9 @@ p {
 }
 
 h1 {
-  font-size: clamp(46px, 7vw, 92px);
+  font-size: clamp(36px, 5vw, 68px);
   letter-spacing: 0;
-  line-height: 0.98;
+  line-height: 1.15;
   margin-bottom: 28px;
   max-width: 960px;
 }
@@ -514,7 +514,7 @@ h3 {
   }
 
   h1 {
-    font-size: 44px;
+    font-size: 34px;
   }
 
   .section,
