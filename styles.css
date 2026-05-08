@@ -695,6 +695,17 @@ h3 {
     display: none;
   }
 
+  /* 모바일에서 본문 양쪽정렬 (단어 끊김 허용) */
+  .hero-copy,
+  .prose p,
+  .program-body p,
+  .proof-body p,
+  .expertise-card > p,
+  .contact p:not(.section-kicker) {
+    text-align: justify;
+    word-break: break-all;
+  }
+
   .program-keywords {
     gap: 4px;
   }
