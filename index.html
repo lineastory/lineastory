@@ -332,7 +332,7 @@
             return (
               '<article>' +
                 '<a class="proof-link" href="' + link + '" target="_blank" rel="noreferrer">' +
-                  (thumb ? '<img class="proof-thumb" src="' + thumb + '" alt="' + title + '" loading="lazy" />' : '') +
+                  (thumb ? '<img class="proof-thumb" src="' + thumb + '" alt="' + title + '" loading="lazy" referrerpolicy="no-referrer" />' : '') +
                   '<div class="proof-body">' +
                     '<p class="proof-date">' + date + '</p>' +
                     '<h3>' + title + '</h3>' +
