@@ -415,7 +415,8 @@ h3 {
 }
 
 .proof-thumb {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
+  height: 140px;
   object-fit: cover;
   width: 100%;
 }
