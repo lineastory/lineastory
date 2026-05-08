@@ -695,6 +695,11 @@ h3 {
     display: none;
   }
 
+  /* 모바일에서 프로그램 카드 설명문 숨김 (제목/부제/키워드/메타정보는 유지) */
+  .program-body > p:not(.program-subtitle) {
+    display: none;
+  }
+
   /* 모바일 전용 줄바꿈 표시 */
   .m-only {
     display: inline;
