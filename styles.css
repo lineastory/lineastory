@@ -688,6 +688,11 @@ h3 {
     font-size: 34px;
   }
 
+  h2 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
   .section,
   .contact {
     padding: 56px 16px;
