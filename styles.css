@@ -809,6 +809,8 @@ h3 {
   .contact p:not(.section-kicker) {
     font-size: 14px;
     line-height: 1.7;
+    text-align: left;
+    word-break: keep-all;
   }
 
   /* 짧은 부제목/태그는 양쪽정렬 제외 (좌측정렬 유지) */
