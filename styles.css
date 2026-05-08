@@ -220,7 +220,7 @@ h3 {
 .signal-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 4px 10px;
   list-style: none;
   margin: 36px 0 0;
   padding: 0;
@@ -713,8 +713,8 @@ h3 {
     line-height: 1.45;
   }
 
-  /* 모바일에서는 데스크톱 전용 줄바꿈 + 클래스 없는 br 모두 숨김 (subtitle 제외) */
-  .program-body p:not(.program-subtitle) br:not(.m-only),
+  /* 모바일에서는 모든 강제 줄바꿈 숨김 (m-only 제외) */
+  .program-body p br:not(.m-only),
   .hero-copy br:not(.m-only),
   .prose p br:not(.m-only),
   .expertise-card p br:not(.m-only) {
@@ -750,12 +750,12 @@ h3 {
   }
 
   .program-keywords {
-    gap: 4px;
+    gap: 2px 6px;
   }
 
   .program-keywords li {
-    font-size: 10px;
-    padding: 3px 8px;
+    font-size: 11px;
+    padding: 0;
   }
 
   /* 메타정보를 한 줄에 압축: 라벨 숨기고 값만 구분자로 연결 */
@@ -824,9 +824,13 @@ h3 {
     line-height: 1.5;
   }
 
+  .expertise-tags {
+    gap: 2px 6px;
+  }
+
   .expertise-tags li {
     font-size: 11px;
-    padding: 3px 9px;
+    padding: 0;
   }
 }
 
