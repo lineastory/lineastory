@@ -652,17 +652,30 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  /* 모바일에서 카드는 2열로 컴팩트하게 */
-  .program-grid,
+  /* 모바일에서 최근 소식은 2열, 프로그램·전문 분야는 1열 가로 분할 */
   .proof-grid {
     gap: 10px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  /* 전문 분야는 1열로 가로 넓게 */
+  .program-grid,
   .expertise-grid {
     gap: 10px;
     grid-template-columns: 1fr;
+  }
+
+  /* 프로그램 카드: 좌측 이미지 + 우측 내용 가로 분할 */
+  .program-card {
+    flex-direction: row;
+  }
+
+  .program-card img {
+    aspect-ratio: auto;
+    flex-shrink: 0;
+    height: auto;
+    width: 38%;
+    align-self: stretch;
+    object-fit: cover;
   }
 
   .program-body {
