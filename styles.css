@@ -791,9 +791,9 @@ h3 {
 
   /* 마지막 항목(재료비/키트)은 라벨도 함께 표시 - 가격을 비용 총액처럼 오해하는 것 방지 */
   .program-meta div:last-child dt {
-    color: var(--ink);
+    color: inherit;
     display: inline;
-    font-weight: 700;
+    font-weight: inherit;
     margin-right: 3px;
   }
 
