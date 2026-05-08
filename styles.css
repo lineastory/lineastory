@@ -813,8 +813,7 @@ h3 {
   }
 
   .proof-body p:last-child {
-    font-size: 11px;
-    line-height: 1.4;
+    display: none;
   }
 
   .proof-date {
