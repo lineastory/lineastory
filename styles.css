@@ -352,10 +352,10 @@ h3 {
 .program-keywords li {
   border: 1px solid var(--line);
   border-radius: 999px;
-  color: var(--muted);
-  font-size: 11px;
+  color: var(--ink);
+  font-size: 13px;
   font-weight: 700;
-  padding: 4px 9px;
+  padding: 5px 12px;
 }
 
 .program-meta {
