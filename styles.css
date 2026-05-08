@@ -1,5 +1,13 @@
 @font-face {
   font-family: 'Paperlogy';
+  src: url('./assets/fonts/Paperlogy-3Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paperlogy';
   src: url('./assets/fonts/Paperlogy-4Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
@@ -167,6 +175,7 @@ h3 {
 .hero-copy {
   color: var(--muted);
   font-size: clamp(18px, 2vw, 22px);
+  font-weight: 300;
   max-width: 760px;
 }
 
@@ -221,9 +230,9 @@ h3 {
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 999px;
-  color: var(--muted);
+  color: var(--ink);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 500;
   padding: 7px 12px;
 }
 
@@ -354,7 +363,7 @@ h3 {
 .program-subtitle {
   color: var(--green);
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   margin-bottom: 0;
 }
 
