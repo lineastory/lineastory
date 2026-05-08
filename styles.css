@@ -679,10 +679,11 @@ h3 {
   /* 프로그램 카드: 좌측 이미지 + 우측 내용 가로 분할 */
   .program-card {
     flex-direction: row;
+    align-items: stretch;
   }
 
   .program-card img {
-    aspect-ratio: auto;
+    aspect-ratio: 1 / 1;
     flex-shrink: 0;
     height: auto;
     width: 38%;
@@ -764,15 +765,34 @@ h3 {
     padding: 3px 8px;
   }
 
+  /* 메타정보를 한 줄에 압축: 라벨 숨기고 값만 구분자로 연결 */
   .program-meta {
-    gap: 4px;
-    padding-top: 10px;
+    color: var(--muted);
+    display: block;
+    font-size: 11px;
+    line-height: 1.5;
+    padding-top: 8px;
   }
 
   .program-meta div {
+    display: inline;
     font-size: 11px;
-    gap: 8px;
-    grid-template-columns: 44px 1fr;
+    gap: 0;
+    grid-template-columns: none;
+  }
+
+  .program-meta dt {
+    display: none;
+  }
+
+  .program-meta dd {
+    display: inline;
+    margin: 0;
+  }
+
+  .program-meta div:not(:last-child) dd::after {
+    content: "  |  ";
+    color: var(--line);
   }
 
   .proof-thumb {
