@@ -295,6 +295,13 @@ h3 {
   font-size: 18px;
 }
 
+.career-title {
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+
 .career-list {
   display: flex;
   flex-direction: column;
