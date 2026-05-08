@@ -688,7 +688,10 @@ h3 {
   }
 
   /* 모바일에서는 강제 줄바꿈 무시하고 자연스럽게 흐르도록 */
-  .program-body p br {
+  .program-body p br,
+  .hero-copy br,
+  .prose p br,
+  .expertise-card p br {
     display: none;
   }
 
