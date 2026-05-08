@@ -230,7 +230,7 @@
         <p class="section-kicker">Experience</p>
         <h2>최근 소식</h2>
       </div>
-      <div class="proof-grid" id="proofGrid" data-rss="https://rss.blog.naver.com/heartart1.xml">
+      <div class="proof-grid" id="proofGrid">
         <p class="proof-loading">블로그에서 최근 소식을 불러오는 중…</p>
       </div>
       <p class="proof-source"><a href="https://blog.naver.com/heartart1" target="_blank" rel="noreferrer">네이버 블로그에서 더 보기 →</a></p>
@@ -293,8 +293,6 @@
     (function () {
       var grid = document.getElementById('proofGrid');
       if (!grid) return;
-      var feed = grid.getAttribute('data-rss');
-      var api = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feed);
 
       function pad2(n) { return n < 10 ? '0' + n : '' + n; }
       function fmtDate(s) {
@@ -307,25 +305,28 @@
           return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
         });
       }
-      function stripAndTrim(s, n) {
-        var text = String(s).replace(/<[^>]*>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+      function trimText(s, n) {
+        var text = String(s).trim();
         return text.length > n ? text.slice(0, n).trim() + '…' : text;
       }
       function fail(msg) {
         grid.innerHTML = '<p class="proof-loading">' + escapeHtml(msg) + '</p>';
       }
 
-      fetch(api)
-        .then(function (r) { return r.json(); })
+      fetch('./data/recent-posts.json', { cache: 'no-cache' })
+        .then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        })
         .then(function (data) {
-          if (!data || data.status !== 'ok' || !data.items || !data.items.length) {
+          if (!data || !data.items || !data.items.length) {
             fail('소식을 불러올 수 없습니다.');
             return;
           }
           var html = data.items.slice(0, 4).map(function (item) {
             var title = escapeHtml(item.title || '');
             var date = escapeHtml(fmtDate(item.pubDate));
-            var desc = escapeHtml(stripAndTrim(item.description || '', 90));
+            var desc = escapeHtml(trimText(item.description || '', 90));
             var link = escapeHtml(item.link || '#');
             var thumb = item.thumbnail ? escapeHtml(item.thumbnail) : '';
             return (
