@@ -227,7 +227,7 @@ h3 {
 }
 
 .intro-band {
-  background: var(--ink);
+  background: #3D5A4E;
   color: #fff;
   padding: 44px clamp(24px, 5vw, 72px);
 }
