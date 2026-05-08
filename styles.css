@@ -641,13 +641,105 @@ h3 {
 
   .section,
   .contact {
-    padding: 72px 20px;
+    padding: 56px 16px;
   }
 
-  .profile-grid div,
+  .section-head {
+    margin-bottom: 24px;
+  }
+
+  .profile-grid div {
+    grid-template-columns: 1fr;
+  }
+
+  /* 모바일에서 카드는 2열로 컴팩트하게 */
   .program-grid,
   .proof-grid,
   .expertise-grid {
-    grid-template-columns: 1fr;
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .program-body {
+    gap: 8px;
+    padding: 14px;
+  }
+
+  .program-card h3 {
+    font-size: 15px;
+  }
+
+  .program-tag {
+    font-size: 10px;
+  }
+
+  .program-subtitle {
+    font-size: 12px;
+  }
+
+  .program-card p {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .program-keywords {
+    gap: 4px;
+  }
+
+  .program-keywords li {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .program-meta {
+    gap: 4px;
+    padding-top: 10px;
+  }
+
+  .program-meta div {
+    font-size: 11px;
+    gap: 8px;
+    grid-template-columns: 44px 1fr;
+  }
+
+  .proof-thumb {
+    height: 100px;
+  }
+
+  .proof-body {
+    gap: 4px;
+    padding: 12px;
+  }
+
+  .proof-body h3 {
+    font-size: 13px;
+  }
+
+  .proof-body p:last-child {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .proof-date {
+    font-size: 11px;
+  }
+
+  .expertise-card {
+    gap: 8px;
+    padding: 16px;
+  }
+
+  .expertise-card h3 {
+    font-size: 15px;
+  }
+
+  .expertise-card > p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .expertise-tags li {
+    font-size: 11px;
+    padding: 3px 9px;
   }
 }
