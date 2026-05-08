@@ -385,6 +385,7 @@ h3 {
 
 .proof-section {
   background: var(--soft);
+  padding-bottom: 48px;
 }
 
 .proof-grid {
@@ -474,6 +475,7 @@ h3 {
 
 .expertise-section {
   background: var(--soft);
+  padding-top: 48px;
 }
 
 .expertise-grid {
