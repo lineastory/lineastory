@@ -295,6 +295,40 @@ h3 {
   font-size: 18px;
 }
 
+.career-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+.career-list li {
+  align-items: baseline;
+  color: var(--ink);
+  display: flex;
+  font-size: 16px;
+  font-weight: 400;
+  gap: 10px;
+  line-height: 1.55;
+}
+
+.career-mark {
+  background: var(--blue);
+  border-radius: 4px;
+  color: #fff;
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 6px;
+  letter-spacing: 0;
+}
+
+.career-mark.past {
+  background: var(--muted);
+}
+
 .profile-grid {
   display: grid;
   gap: 14px;
@@ -736,6 +770,17 @@ h3 {
   /* 모바일 전용 줄바꿈 표시 */
   .m-only {
     display: inline;
+  }
+
+  .career-list li {
+    font-size: 14px;
+    gap: 8px;
+    line-height: 1.45;
+  }
+
+  .career-mark {
+    font-size: 11px;
+    padding: 1px 5px;
   }
 
   /* 모바일에서 본문 양쪽정렬 (단어 끊김 허용) */
