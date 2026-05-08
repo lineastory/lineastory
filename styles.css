@@ -687,23 +687,42 @@ h3 {
     line-height: 1.45;
   }
 
-  /* 모바일에서는 강제 줄바꿈 무시하고 자연스럽게 흐르도록 */
-  .program-body p br,
-  .hero-copy br,
-  .prose p br,
-  .expertise-card p br {
+  /* 모바일에서는 데스크톱 전용 줄바꿈 + 클래스 없는 br 모두 숨김 */
+  .program-body p br:not(.m-only),
+  .hero-copy br:not(.m-only),
+  .prose p br:not(.m-only),
+  .expertise-card p br:not(.m-only) {
     display: none;
+  }
+
+  /* 모바일 전용 줄바꿈 표시 */
+  .m-only {
+    display: inline;
   }
 
   /* 모바일에서 본문 양쪽정렬 (단어 끊김 허용) */
   .hero-copy,
   .prose p,
-  .program-body p,
+  .program-card > div > p:not(.program-subtitle),
   .proof-body p,
   .expertise-card > p,
   .contact p:not(.section-kicker) {
     text-align: justify;
     word-break: break-all;
+  }
+
+  /* 짧은 부제목/태그는 양쪽정렬 제외 (좌측정렬 유지) */
+  .program-subtitle,
+  .program-tag {
+    text-align: left;
+    word-break: keep-all;
+  }
+}
+
+/* 데스크톱에서는 모바일 전용 줄바꿈 숨김 */
+@media (min-width: 681px) {
+  .m-only {
+    display: none;
   }
 
   .program-keywords {
