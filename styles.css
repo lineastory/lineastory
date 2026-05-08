@@ -397,13 +397,78 @@ h3 {
   background: rgba(255, 255, 255, 0.76);
   border: 1px solid var(--line);
   border-radius: 16px;
-  padding: 24px;
+  overflow: hidden;
+}
+
+.proof-link {
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proof-link:hover {
+  box-shadow: 0 12px 28px rgba(35, 33, 31, 0.08);
+  transform: translateY(-2px);
+}
+
+.proof-thumb {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  width: 100%;
+}
+
+.proof-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 6px;
+  padding: 20px;
+}
+
+.proof-body h3 {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.proof-body p:last-child {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+  margin-bottom: 0;
 }
 
 .proof-date {
   color: var(--gold);
   font-size: 13px;
   font-weight: 900;
+  margin-bottom: 0;
+}
+
+.proof-loading {
+  color: var(--muted);
+  font-size: 14px;
+  grid-column: 1 / -1;
+  padding: 32px 0;
+  text-align: center;
+}
+
+.proof-source {
+  margin-top: 24px;
+  text-align: right;
+}
+
+.proof-source a {
+  color: var(--blue-dark);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.proof-source a:hover {
+  text-decoration: underline;
 }
 
 .expertise-section {

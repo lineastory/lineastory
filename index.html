@@ -230,28 +230,10 @@
         <p class="section-kicker">Experience</p>
         <h2>최근 소식</h2>
       </div>
-      <div class="proof-grid">
-        <article>
-          <p class="proof-date">2026.04</p>
-          <h3>H은행 ART:REST 교육</h3>
-          <p>일반기능직원을 대상으로<br>예술심리 기반 내면성찰과 회복 프로그램을<br>진행했습니다.</p>
-        </article>
-        <article>
-          <p class="proof-date">2026.04</p>
-          <h3>서울노동권익센터 마음돌봄 강사 위촉</h3>
-          <p>일하는 사람들의 마음돌봄을 지원하는<br>공공기관 프로그램에<br>강사로 참여합니다.</p>
-        </article>
-        <article>
-          <p class="proof-date">2026.03</p>
-          <h3>한국강사신문 오늘의 인물 소개</h3>
-          <p>예술심리치료사이자<br>알음다움 부대표로서의 활동이<br>외부 매체에 소개되었습니다.</p>
-        </article>
-        <article>
-          <p class="proof-date">2026.04</p>
-          <h3>회복을 부르는 리추얼 칼럼</h3>
-          <p>직장인의 회복탄력성, 감정관리,<br>일상 회복을 주제로<br>칼럼을 기고했습니다.</p>
-        </article>
+      <div class="proof-grid" id="proofGrid" data-rss="https://rss.blog.naver.com/heartart1.xml">
+        <p class="proof-loading">블로그에서 최근 소식을 불러오는 중…</p>
       </div>
+      <p class="proof-source"><a href="https://blog.naver.com/heartart1" target="_blank" rel="noreferrer">네이버 블로그에서 더 보기 →</a></p>
     </section>
 
     <section id="expertise" class="section expertise-section">
@@ -306,5 +288,63 @@
     <p>조세화 예술심리치료사 브랜딩 웹페이지</p>
     <p>출처: 네이버 블로그 heartart1 공개 프로필 및 RSS 콘텐츠</p>
   </footer>
+
+  <script>
+    (function () {
+      var grid = document.getElementById('proofGrid');
+      if (!grid) return;
+      var feed = grid.getAttribute('data-rss');
+      var api = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feed);
+
+      function pad2(n) { return n < 10 ? '0' + n : '' + n; }
+      function fmtDate(s) {
+        var d = new Date(s);
+        if (isNaN(d.getTime())) return '';
+        return d.getFullYear() + '.' + pad2(d.getMonth() + 1);
+      }
+      function escapeHtml(s) {
+        return String(s).replace(/[&<>"']/g, function (c) {
+          return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
+        });
+      }
+      function stripAndTrim(s, n) {
+        var text = String(s).replace(/<[^>]*>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+        return text.length > n ? text.slice(0, n).trim() + '…' : text;
+      }
+      function fail(msg) {
+        grid.innerHTML = '<p class="proof-loading">' + escapeHtml(msg) + '</p>';
+      }
+
+      fetch(api)
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (!data || data.status !== 'ok' || !data.items || !data.items.length) {
+            fail('소식을 불러올 수 없습니다.');
+            return;
+          }
+          var html = data.items.slice(0, 4).map(function (item) {
+            var title = escapeHtml(item.title || '');
+            var date = escapeHtml(fmtDate(item.pubDate));
+            var desc = escapeHtml(stripAndTrim(item.description || '', 90));
+            var link = escapeHtml(item.link || '#');
+            var thumb = item.thumbnail ? escapeHtml(item.thumbnail) : '';
+            return (
+              '<article>' +
+                '<a class="proof-link" href="' + link + '" target="_blank" rel="noreferrer">' +
+                  (thumb ? '<img class="proof-thumb" src="' + thumb + '" alt="' + title + '" loading="lazy" />' : '') +
+                  '<div class="proof-body">' +
+                    '<p class="proof-date">' + date + '</p>' +
+                    '<h3>' + title + '</h3>' +
+                    '<p>' + desc + '</p>' +
+                  '</div>' +
+                '</a>' +
+              '</article>'
+            );
+          }).join('');
+          grid.innerHTML = html;
+        })
+        .catch(function () { fail('소식을 불러올 수 없습니다.'); });
+    })();
+  </script>
 </body>
 </html>
