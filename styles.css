@@ -687,8 +687,8 @@ h3 {
     line-height: 1.45;
   }
 
-  /* 모바일에서는 데스크톱 전용 줄바꿈 + 클래스 없는 br 모두 숨김 */
-  .program-body p br:not(.m-only),
+  /* 모바일에서는 데스크톱 전용 줄바꿈 + 클래스 없는 br 모두 숨김 (subtitle 제외) */
+  .program-body p:not(.program-subtitle) br:not(.m-only),
   .hero-copy br:not(.m-only),
   .prose p br:not(.m-only),
   .expertise-card p br:not(.m-only) {
