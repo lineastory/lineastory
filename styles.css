@@ -406,35 +406,63 @@ h3 {
   font-weight: 900;
 }
 
-.curriculum-table {
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.curriculum-table > div {
+.expertise-grid {
   display: grid;
   gap: 18px;
-  grid-template-columns: 0.8fr 1fr 1.3fr 1.3fr;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.curriculum-table span {
-  border-top: 1px solid var(--line);
-  min-width: 0;
-  padding: 18px;
+.expertise-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 32px;
 }
 
-.curriculum-table .table-head span {
+.expertise-num {
+  align-items: center;
   background: var(--ink);
-  border-top: 0;
+  border-radius: 50%;
   color: #fff;
+  display: inline-flex;
   font-size: 13px;
   font-weight: 900;
+  height: 32px;
+  justify-content: center;
+  width: 32px;
 }
 
-.curriculum-table div:not(.table-head) span:first-child {
-  color: var(--blue-dark);
+.expertise-card h3 {
+  font-size: 20px;
   font-weight: 900;
+  margin: 0;
+}
+
+.expertise-card > p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.expertise-tags li {
+  background: var(--soft);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
 }
 
 .contact {
@@ -493,8 +521,8 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .curriculum-table > div {
-    grid-template-columns: 1fr 1fr;
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -525,11 +553,7 @@ h3 {
   .profile-grid div,
   .program-grid,
   .proof-grid,
-  .curriculum-table > div {
+  .expertise-grid {
     grid-template-columns: 1fr;
-  }
-
-  .curriculum-table span {
-    padding: 14px 16px;
   }
 }
