@@ -724,6 +724,13 @@ h3 {
     line-height: 1.3;
   }
 
+  .profile-list li {
+    font-size: 11px;
+    line-height: 1.5;
+    padding-left: 10px;
+    word-break: keep-all;
+  }
+
   .section,
   .contact {
     padding: 56px 16px;
