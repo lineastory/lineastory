@@ -306,9 +306,9 @@ h3 {
 
 .profile-list li {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.55;
-  padding-left: 12px;
+  padding-left: 14px;
   position: relative;
 }
 
