@@ -439,6 +439,20 @@ h3 {
   margin-bottom: 0;
 }
 
+.program-link {
+  align-self: flex-start;
+  color: var(--rose);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.program-link:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
 .program-keywords {
   display: flex;
   flex-wrap: wrap;
