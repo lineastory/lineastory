@@ -519,8 +519,8 @@ h3 {
 }
 
 .proof-thumb {
-  aspect-ratio: 16 / 9;
-  height: 180px;
+  aspect-ratio: 4 / 3;
+  height: 240px;
   object-fit: cover;
   width: 100%;
 }
@@ -906,7 +906,7 @@ h3 {
   }
 
   .proof-thumb {
-    height: 130px;
+    height: 170px;
   }
 
   .proof-body {
