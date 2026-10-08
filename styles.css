@@ -536,6 +536,7 @@ h3 {
   aspect-ratio: 4 / 3;
   height: 240px;
   object-fit: cover;
+  object-position: center bottom;
   width: 100%;
 }
 
